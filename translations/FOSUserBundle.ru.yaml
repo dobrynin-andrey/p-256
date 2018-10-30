@@ -2,3 +2,7 @@ login:
   email: Email
   login: Логин
   email_login: Email / Логин
+
+registration:
+  form:
+    name: ФИО

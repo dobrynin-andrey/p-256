@@ -22,6 +22,11 @@ class User extends BaseUser
     /**
      * @ORM\Column(type="string")
      */
+    protected $name;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
     protected $facebookID;
 
 
@@ -32,31 +37,33 @@ class User extends BaseUser
     }
 
     /**
-     *  Проверка, чтобы username всегда совпадал с email
+     * Overridden so that username is now optional
      *
-     * @param string $username
-     * @return $this|BaseUser
+     * @param $email
+     * @return User
      */
-    public function setUsername($username)
+    public function setEmail($email): User
     {
-        $this->username = $this->email === $username ?  $username : $this->email;
+        $this->setUsername($email);
 
-        return $this;
+        return parent::setEmail($email);
     }
 
     /**
-     *  Проверка, чтобы usernameCanonical всегда совпадал с email
-     *
-     * @param string $usernameCanonical
-     * @return $this|BaseUser
+     * @return mixed
      */
-    public function setUsernameCanonical($usernameCanonical)
+    public function getName()
     {
-        $this->usernameCanonical = $this->email === $usernameCanonical ? $usernameCanonical : $this->email;
-
-        return $this;
+        return $this->name;
     }
 
+    /**
+     * @param mixed $name
+     */
+    public function setName($name): void
+    {
+        $this->name = $name;
+    }
 
     /**
      * @return mixed
@@ -68,12 +75,10 @@ class User extends BaseUser
 
     /**
      * @param $facebookID
-     * @return User
      */
-    public function setFacebookID($facebookID)
+    public function setFacebookID($facebookID): void
     {
         $this->facebookID = $facebookID;
 
-        return $this;
     }
 }
