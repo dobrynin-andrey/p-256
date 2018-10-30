@@ -19,7 +19,11 @@ class User extends BaseUser
      */
     protected $id;
 
-    protected $email;
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $facebookID;
+
 
     public function __construct()
     {
@@ -49,6 +53,26 @@ class User extends BaseUser
     public function setUsernameCanonical($usernameCanonical)
     {
         $this->usernameCanonical = $this->email === $usernameCanonical ? $usernameCanonical : $this->email;
+
+        return $this;
+    }
+
+
+    /**
+     * @return mixed
+     */
+    public function getFacebookID()
+    {
+        return $this->facebookID;
+    }
+
+    /**
+     * @param $facebookID
+     * @return User
+     */
+    public function setFacebookID($facebookID)
+    {
+        $this->facebookID = $facebookID;
 
         return $this;
     }
