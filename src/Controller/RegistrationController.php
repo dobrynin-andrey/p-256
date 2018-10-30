@@ -11,7 +11,7 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class RegistrationController extends AbstractController
 {
     /**
-     * @Route("/register", name="user_registration")
+     * @Route("/registerawd", name="user_registration")
      */
     public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
@@ -36,7 +36,7 @@ class RegistrationController extends AbstractController
             // ... do any other work - like sending them an email, etc
             // maybe set a "flash" success message for the user
 
-            return $this->redirectToRoute('app_homepage');
+            return $this->redirectToRoute('user_registration');
         }
 
         return $this->render(

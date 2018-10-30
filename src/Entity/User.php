@@ -2,104 +2,54 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
+use FOS\UserBundle\Model\User as BaseUser;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity
  * @UniqueEntity(fields="email", message="Email already taken")
+ * @ORM\Table(name="fos_user")
  */
-class User implements UserInterface
+class User extends BaseUser
 {
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
-    /**
-     * @ORM\Column(type="string", length=255, unique=true)
-     * @Assert\NotBlank()
-     * @Assert\Email()
-     */
-    private $email;
-
-
-    /**
-     * @Assert\NotBlank()
-     * @Assert\Length(max=4096)
-     */
-    private $plainPassword;
-
-    /**
-     * The below length depends on the "algorithm" you use for encoding
-     * the password, but this works well with bcrypt.
-     *
-     * @ORM\Column(type="string", length=64)
-     */
-    private $password;
-
-    /**
-     * @ORM\Column(type="array")
-     */
-    private $roles;
+    protected $email;
 
     public function __construct()
     {
-        $this->roles = array('ROLE_USER');
+        parent::__construct();
+        $this->roles = ['ROLE_USER'];
     }
 
-
-    public function getEmail()
+    /**
+     *  Проверка, чтобы username всегда совпадал с email
+     *
+     * @param string $username
+     * @return $this|BaseUser
+     */
+    public function setUsername($username)
     {
-        return $this->email;
+        $this->username = $this->email === $username ?  $username : $this->email;
+
+        return $this;
     }
 
-    public function setEmail($email)
+    /**
+     *  Проверка, чтобы usernameCanonical всегда совпадал с email
+     *
+     * @param string $usernameCanonical
+     * @return $this|BaseUser
+     */
+    public function setUsernameCanonical($usernameCanonical)
     {
-        $this->email = $email;
-    }
+        $this->usernameCanonical = $this->email === $usernameCanonical ? $usernameCanonical : $this->email;
 
-    public function getPlainPassword()
-    {
-        return $this->plainPassword;
-    }
-
-    public function setPlainPassword($password)
-    {
-        $this->plainPassword = $password;
-    }
-
-    public function getPassword()
-    {
-        return $this->password;
-    }
-
-    public function setPassword($password)
-    {
-        $this->password = $password;
-    }
-
-    public function getUsername()
-    {
-        return $this->email;
-    }
-
-    public function getSalt()
-    {
-        // The bcrypt and argon2i algorithms don't require a separate salt.
-        // You *may* need a real salt if you choose a different encoder.
-        return null;
-    }
-
-    public function getRoles()
-    {
-        return $this->roles;
-    }
-
-    public function eraseCredentials()
-    {
+        return $this;
     }
 }
