@@ -28,6 +28,7 @@ security:
             oauth:
                 resource_owners:
                     facebook:           "/connect/check-facebook"
+                    vkontakte:          "/connect/check-vkontakte"
 
                 login_path:        /connect
                 failure_path:      /connect

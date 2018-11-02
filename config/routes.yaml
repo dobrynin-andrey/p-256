@@ -8,6 +8,9 @@ fos_user:
 facebook_login:
   path: /login/check-facebook
 
+vkontakte_login:
+  path: /login/check-vkontakte
+
 hwi_oauth_redirect:
   resource: "@HWIOAuthBundle/Resources/config/routing/redirect_41.xml"
   prefix:   /connect

@@ -9,7 +9,8 @@ hwi_oauth:
     fosub:
         username_iterations: 30
         properties:
-            facebook: facebookID
+            facebook:   facebookID
+            vkontakte:  vkontakteID
 
     # https://github.com/hwi/HWIOAuthBundle/blob/master/Resources/doc/2-configuring_resource_owners.md
     resource_owners:
@@ -21,3 +22,9 @@ hwi_oauth:
 #            options:
 #                display: popup
 #                csrf: true
+
+        vkontakte:
+            type:                vkontakte
+            client_id:           '%env(VK_ID)%'
+            client_secret:       '%env(VK_SECRET)%'
+            scope:               "email"

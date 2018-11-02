@@ -29,6 +29,10 @@ class User extends BaseUser
      */
     protected $facebookID;
 
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $vkontakteID;
 
     public function __construct()
     {
@@ -81,4 +85,22 @@ class User extends BaseUser
         $this->facebookID = $facebookID;
 
     }
+
+    /**
+     * @return mixed
+     */
+    public function getVkontakteID()
+    {
+        return $this->vkontakteID;
+    }
+
+    /**
+     * @param mixed $vkontakteID
+     */
+    public function setVkontakteID($vkontakteID): void
+    {
+        $this->vkontakteID = $vkontakteID;
+    }
+
+
 }
