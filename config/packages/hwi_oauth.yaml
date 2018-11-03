@@ -9,8 +9,9 @@ hwi_oauth:
     fosub:
         username_iterations: 30
         properties:
-            facebook:   facebookID
-            vkontakte:  vkontakteID
+            facebook:       facebookID
+            vkontakte:      vkontakteID
+            odnoklassniki:  odnoklassnikiID
 
     # https://github.com/hwi/HWIOAuthBundle/blob/master/Resources/doc/2-configuring_resource_owners.md
     resource_owners:
@@ -28,3 +29,11 @@ hwi_oauth:
             client_id:           '%env(VK_ID)%'
             client_secret:       '%env(VK_SECRET)%'
             scope:               "email"
+
+        odnoklassniki:
+            type:                odnoklassniki
+            client_id:           '%env(OK_ID)%'
+            client_secret:       '%env(OK_SECRET)%'
+            scope:                "VALUABLE_ACCESS; PHOTO_CONTENT; GET_EMAIL"
+            options:
+                application_key: '%env(OK_APPLICATION_KEY)%'

@@ -29,6 +29,7 @@ security:
                 resource_owners:
                     facebook:           "/connect/check-facebook"
                     vkontakte:          "/connect/check-vkontakte"
+                    odnoklassniki:      "/connect/check-odnoklassniki"
 
                 login_path:        /connect
                 failure_path:      /connect

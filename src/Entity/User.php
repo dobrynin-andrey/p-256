@@ -34,6 +34,11 @@ class User extends BaseUser
      */
     protected $vkontakteID;
 
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $odnoklassnikiID;
+
     public function __construct()
     {
         parent::__construct();
@@ -100,6 +105,22 @@ class User extends BaseUser
     public function setVkontakteID($vkontakteID): void
     {
         $this->vkontakteID = $vkontakteID;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOdnoklassnikiID()
+    {
+        return $this->odnoklassnikiID;
+    }
+
+    /**
+     * @param mixed $odnoklassnikiID
+     */
+    public function setOdnoklassnikiID($odnoklassnikiID): void
+    {
+        $this->odnoklassnikiID = $odnoklassnikiID;
     }
 
 
