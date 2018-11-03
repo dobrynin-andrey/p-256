@@ -7,6 +7,9 @@ vkontakte_login:
 odnoklassniki_login:
   path: /login/check-odnoklassniki
 
+google_login:
+  path: /login/check-google
+
 hwi_oauth_redirect:
   resource: "@HWIOAuthBundle/Resources/config/routing/redirect_41.xml"
   prefix:   /connect

@@ -12,6 +12,7 @@ hwi_oauth:
             facebook:       facebookID
             vkontakte:      vkontakteID
             odnoklassniki:  odnoklassnikiID
+            google:         googleID
 
     # https://github.com/hwi/HWIOAuthBundle/blob/master/Resources/doc/2-configuring_resource_owners.md
     resource_owners:
@@ -37,3 +38,9 @@ hwi_oauth:
             scope:                "VALUABLE_ACCESS; PHOTO_CONTENT; GET_EMAIL"
             options:
                 application_key: '%env(OK_APPLICATION_KEY)%'
+
+        google:
+            type:                google
+            client_id:           '%env(GOOGLE_ID)%'
+            client_secret:       '%env(GOOGLE_SECRET)%'
+            scope:               "email profile"

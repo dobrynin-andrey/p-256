@@ -39,6 +39,11 @@ class User extends BaseUser
      */
     protected $odnoklassnikiID;
 
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $googleID;
+
     public function __construct()
     {
         parent::__construct();
@@ -123,5 +128,20 @@ class User extends BaseUser
         $this->odnoklassnikiID = $odnoklassnikiID;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getGoogleID()
+    {
+        return $this->googleID;
+    }
+
+    /**
+     * @param mixed $googleID
+     */
+    public function setGoogleID($googleID): void
+    {
+        $this->googleID = $googleID;
+    }
 
 }
