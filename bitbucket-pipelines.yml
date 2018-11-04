@@ -7,14 +7,10 @@ pipelines:
       caches:
       - sshpass
       script:
-      - sshpass install --path ~/.sshpass/cache
-      - apt-get update
-      - apt-get -qq install sshpass
+      - apt-get update && apt-get -qq install sshpass
       - echo "Start deploy..."
-      - ls -l
-      - sshpass -V
+      - ls -la
       - sshpass -p $SSH_PASS ssh -o StrictHostKeyChecking=no  -p $SSH_PORT $SSH_USERNAME@$SSH_HOSTNAME 'bash -s' < script.sh
-      - echo "Done!"
 definitions:
   caches:
     sshpass: ~/.sshpass/cache
