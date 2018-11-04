@@ -2,8 +2,8 @@
 
 {% block header %}
     <header class="container mt-4 mb-2">
-        <div>
-            <a href="{{ path('index') }}"></a>
+        <a href="{{ path('index') }}">Главная</a>
+        <div class="float-right">
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                 {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
                 <a href="{{ path('fos_user_security_logout') }}">
