@@ -7,6 +7,7 @@ pipelines:
       caches:
       - sshpass
       script:
+      - sshpass install --path ~/.sshpass/cache
       - apt-get update
       - apt-get -qq install sshpass
       - echo "Start deploy..."
