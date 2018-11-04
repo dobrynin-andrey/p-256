@@ -3,20 +3,9 @@
 {% block title %}Hello {{ controller_name }}!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
 <div class="example-wrapper">
     <h1>Hello! This is P-256 ✅</h1>
-    {% block hwi_oauth_content %}
-        {% if error is defined and error %}
-            <span>{{ error }}</span>
-        {% endif %}
-        {% for owner in hwi_oauth_resource_owners() %}
-            <a href="{{ hwi_oauth_login_url(owner) }}">{{ owner | trans({}, 'HWIOAuthBundle') }}</a> <br />
-        {% endfor %}
-    {% endblock hwi_oauth_content %}
+    {% include 'oauth/hwi_oauth_content.html.twig' %}
 </div>
 {% endblock %}
