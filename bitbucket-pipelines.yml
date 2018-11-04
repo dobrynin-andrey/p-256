@@ -1,5 +1,8 @@
 pipelines:
   default:
   - step:
+      name: Deploy
       script:
-      - ./deploy.sh
+      - echo "Start deploy..."
+      - ls -l
+      - bash deploy.sh
