@@ -1,8 +1,14 @@
+options:
+  max-time: 60
 pipelines:
   default:
   - step:
       name: Deploy
+      caches:
+      - sshpass
       script:
+      - apt-get update
+      - apt-get -qq install sshpass
       - echo "Start deploy..."
       - ls -l
-      - bash deploy.sh
+      - sshpass -p $SSH_PASS ssh -p $SSH_PORT $SSH_USERNAME@$SSH_HOSTNAME 'bash -s' < script.sh
