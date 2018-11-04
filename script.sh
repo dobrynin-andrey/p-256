@@ -6,7 +6,11 @@ cd dobrynin-andrey.ru/p-256/
 
 pwd
 echo 'fetch and merge'
-git pull
+git pull bitbucket master
 
 echo 'composer update and clean cache'
 /usr/local/php/php-7.2/bin/php /home/$USER/.composer/composer.phar install
+
+exit
+
+echo 'success'

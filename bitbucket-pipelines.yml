@@ -10,6 +10,7 @@ pipelines:
       - echo "Start deploy..."
       - ls -l
       - sshpass -p $SSH_PASS ssh -p $SSH_PORT $SSH_USERNAME@$SSH_HOSTNAME 'bash -s' < script.sh
+      - echo "Done!"
 definitions:
   caches:
     sshpass: ~/.sshpass/cache
