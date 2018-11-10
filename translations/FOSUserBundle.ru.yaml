@@ -5,4 +5,5 @@ login:
 
 registration:
   form:
-    name: ФИО
+    first_name: Имя
+    last_name: Фамилия
