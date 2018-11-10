@@ -13,6 +13,7 @@ git pull bitbucket master
 
 echo 'composer update and clean cache'
 ${composer} install
+${php7_2} bin/console doctrine:migrations:migrate --no-interaction --query-time
 ${php7_2} bin/console cache:clear --env=prod --no-debug
 
 echo "Successfully deploy"
