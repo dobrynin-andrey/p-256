@@ -27,10 +27,10 @@ security:
 
             oauth:
                 resource_owners:
-                    facebook:           "/connect/service/facebook"
-                    vkontakte:          "/connect/service/vkontakte"
-                    odnoklassniki:      "/connect/service/odnoklassniki"
-                    google:             "/connect/service/google"
+                    facebook:           "/connect/check-facebook"
+                    vkontakte:          "/connect/check-vkontakte"
+                    odnoklassniki:      "/connect/check-odnoklassniki"
+                    google:             "/connect/check-google"
 
                 login_path:        /connect
                 failure_path:      /connect

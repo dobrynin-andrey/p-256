@@ -1,14 +1,14 @@
 facebook_login:
-  path: /connect/service/facebook
+  path: /connect/check-facebook
 
 vkontakte_login:
-  path: /connect/service/vkontakte
+  path: /connect/check-vkontakte
 
 odnoklassniki_login:
-  path: /connect/service/odnoklassniki
+  path: /connect/check-odnoklassniki
 
 google_login:
-  path: /connect/service/google
+  path: /connect/check-google
 
 hwi_oauth_redirect:
   resource: "@HWIOAuthBundle/Resources/config/routing/redirect_41.xml"

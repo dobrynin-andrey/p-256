@@ -21,6 +21,8 @@ hwi_oauth:
             client_id:           '%env(FB_ID)%'
             client_secret:       '%env(FB_SECRET)%'
             scope:               "email"
+            options:
+                csrf: true
 #            options:
 #                display: popup
 #                csrf: true
@@ -30,6 +32,8 @@ hwi_oauth:
             client_id:           '%env(VK_ID)%'
             client_secret:       '%env(VK_SECRET)%'
             scope:               "email"
+            options:
+                csrf: true
 
         odnoklassniki:
             type:                odnoklassniki
@@ -38,6 +42,7 @@ hwi_oauth:
             scope:                "VALUABLE_ACCESS; PHOTO_CONTENT; GET_EMAIL"
             options:
                 application_key: '%env(OK_APPLICATION_KEY)%'
+                csrf: true
             paths:
                 profilepicture:  pic_3
 
@@ -46,3 +51,5 @@ hwi_oauth:
             client_id:           '%env(GOOGLE_ID)%'
             client_secret:       '%env(GOOGLE_SECRET)%'
             scope:               "email profile"
+            options:
+                csrf: true
