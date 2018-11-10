@@ -38,6 +38,8 @@ hwi_oauth:
             scope:                "VALUABLE_ACCESS; PHOTO_CONTENT; GET_EMAIL"
             options:
                 application_key: '%env(OK_APPLICATION_KEY)%'
+            paths:
+                profilepicture:  pic_3
 
         google:
             type:                google
