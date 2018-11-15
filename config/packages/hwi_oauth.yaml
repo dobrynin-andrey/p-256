@@ -9,10 +9,10 @@ hwi_oauth:
     fosub:
         username_iterations: 30
         properties:
-            facebook:       facebookID
-            vkontakte:      vkontakteID
-            odnoklassniki:  odnoklassnikiID
-            google:         googleID
+            facebook:       facebookUid
+            vkontakte:      vkontakteUid
+            odnoklassniki:  odnoklassnikiUid
+            google:         googleUid
 
     # https://github.com/hwi/HWIOAuthBundle/blob/master/Resources/doc/2-configuring_resource_owners.md
     resource_owners:

@@ -37,4 +37,4 @@ services:
 
     my.oauth_aware.user_provider.service:
         class: HWI\Bundle\OAuthBundle\Security\Core\User\FOSUBUserProvider
-        arguments: ['@fos_user.user_manager',{facebook: facebookID, vkontakte: vkontakteID, odnoklassniki: odnoklassnikiID, google: googleID}]
+        arguments: ['@fos_user.user_manager',{facebook: facebookUid, vkontakte: vkontakteUid, odnoklassniki: odnoklassnikiUid, google: googleUid}]

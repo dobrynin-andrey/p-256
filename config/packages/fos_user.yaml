@@ -1,10 +1,22 @@
 fos_user:
   db_driver: orm
   firewall_name: main
-  user_class: App\Entity\User
+  #user_class: App\Entity\User
+  #user_class:     Sonata\UserBundle\Entity\BaseUser
+  user_class:     App\Application\Sonata\UserBundle\Entity\User
+
+  group:
+    group_class:   App\Application\Sonata\UserBundle\Entity\Group
+    group_manager: sonata.user.orm.group_manager
+
   from_email:
     address: "%env(FOS_USER_EMAIL_ADDRESS)%"
     sender_name: "%env(FOS_USER_SENDER_NAME)%"
+
   registration:
     form:
       type: App\Form\RegistrationFormType
+
+
+  service:
+    user_manager: sonata.user.orm.user_manager
