@@ -31,6 +31,7 @@ doctrine:
                 prefix: 'App\Entity'
                 alias: App
             SonataUserBundle: ~
+            SonataMediaBundle: ~
             FOSUserBundle: ~
             ApplicationSonataUserBundle: ~
 

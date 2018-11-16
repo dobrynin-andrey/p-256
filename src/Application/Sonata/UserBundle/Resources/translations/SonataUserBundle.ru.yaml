@@ -1,0 +1,4 @@
+form:
+  label_vkontakte_uid: Vkontakte UID
+  label_odnoklassniki_uid: Odnoklassniki UID
+  label_google_uid: Google UID
