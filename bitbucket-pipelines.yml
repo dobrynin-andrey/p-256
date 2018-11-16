@@ -1,6 +1,7 @@
 options:
   max-time: 60
 pipelines:
+  branches:
   master:
   - step:
       name: Deploy
