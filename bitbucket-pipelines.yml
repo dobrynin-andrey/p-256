@@ -1,7 +1,7 @@
 options:
   max-time: 60
 pipelines:
-  default:
+  master:
   - step:
       name: Deploy
       caches:
